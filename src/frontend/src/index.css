@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+    /* Deep navy dark theme */
+    --background: 0.13 0.03 240;
+    --foreground: 0.95 0.015 240;
+    --card: 0.18 0.038 228;
+    --card-foreground: 0.95 0.015 240;
+    --popover: 0.2 0.042 228;
+    --popover-foreground: 0.95 0.015 240;
+    --primary: 0.78 0.12 192;
+    --primary-foreground: 0.12 0.025 235;
+    --secondary: 0.22 0.045 228;
+    --secondary-foreground: 0.95 0.015 240;
+    --muted: 0.22 0.04 230;
+    --muted-foreground: 0.6 0.025 235;
+    --accent: 0.78 0.12 192;
+    --accent-foreground: 0.12 0.025 235;
+    --destructive: 0.65 0.18 20;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.98 0.01 240 / 8%;
+    --input: 0.98 0.01 240 / 12%;
+    --ring: 0.78 0.12 192;
+    --success: 0.76 0.15 155;
+    --chart-1: 0.78 0.12 192;
+    --chart-2: 0.76 0.15 155;
+    --chart-3: 0.65 0.18 20;
+    --chart-4: 0.72 0.14 270;
+    --chart-5: 0.8 0.16 60;
+    --sidebar: 0.16 0.042 228;
+    --sidebar-foreground: 0.95 0.015 240;
+    --sidebar-primary: 0.78 0.12 192;
+    --sidebar-primary-foreground: 0.12 0.025 235;
+    --sidebar-accent: 0.22 0.05 228;
+    --sidebar-accent-foreground: 0.95 0.015 240;
+    --sidebar-border: 0.98 0.01 240 / 8%;
+    --sidebar-ring: 0.78 0.12 192;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--muted-foreground) / 0.3);
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    background: oklch(var(--card));
+    border: 1px solid oklch(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px oklch(0.05 0.02 240 / 0.6), inset 0 1px 0
+      oklch(0.98 0.01 240 / 0.06);
+  }
+
+  .teal-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.78 0.14 192),
+      oklch(0.72 0.16 210)
+    );
+  }
+
+  .timer-font {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+}
